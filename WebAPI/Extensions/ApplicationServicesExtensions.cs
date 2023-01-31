@@ -1,6 +1,7 @@
 ﻿using Core.Interfaces;
 using Infrastructure.Context;
 using Infrastructure.Services;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 using StackExchange.Redis;
 
@@ -23,6 +24,13 @@ public static class ApplicationServicesExtensions
             var options = ConfigurationOptions.Parse(config.GetConnectionString("Redis"));
             return ConnectionMultiplexer.Connect(options);
         });
+        
+        services.Configure<RequestLocalizationOptions>(options =>
+        {
+            options.DefaultRequestCulture = new RequestCulture("en-US");
+        });
+        
+        
         
         
         
