@@ -1,5 +1,6 @@
 ﻿using Core.Entities;
 using Infrastructure.Configurations;
+using Infrastructure.SeedData;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -34,6 +35,6 @@ public class AboutCinemaProjectContext : IdentityDbContext<AppUser>
         modelBuilder.ApplyConfiguration(new UserConfiguration());
         modelBuilder.ApplyConfiguration(new MovieConfiguration());
             
-        
+        SeedInitializer.ContextSeed(modelBuilder);
     }
 }
