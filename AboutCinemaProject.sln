@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI\WebAPI.csproj", "{F25E573C-31A0-4DCB-BB4C-1DF6595E926E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{7E5C0C2B-FA19-46ED-B724-67364AFBE89C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{545DD3CD-66AF-4877-A564-C54D998853F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{F25E573C-31A0-4DCB-BB4C-1DF6595E926E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F25E573C-31A0-4DCB-BB4C-1DF6595E926E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F25E573C-31A0-4DCB-BB4C-1DF6595E926E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E5C0C2B-FA19-46ED-B724-67364AFBE89C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E5C0C2B-FA19-46ED-B724-67364AFBE89C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E5C0C2B-FA19-46ED-B724-67364AFBE89C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E5C0C2B-FA19-46ED-B724-67364AFBE89C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{545DD3CD-66AF-4877-A564-C54D998853F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{545DD3CD-66AF-4877-A564-C54D998853F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{545DD3CD-66AF-4877-A564-C54D998853F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{545DD3CD-66AF-4877-A564-C54D998853F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

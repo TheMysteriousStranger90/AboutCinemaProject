@@ -1,6 +1,6 @@
 ﻿namespace Core.Entities;
 
-public class MovieCountry
+public class MovieCountry : BaseEntity
 {
-    
+    public string Name { get; set; }
 }
