@@ -4,5 +4,5 @@ namespace Core.Interfaces;
 
 public interface ICommentRepository
 {
-    Task<IEnumerable<Comment>> GetByMovieIdAsync(int id);
+    Task<IReadOnlyList<Comment>> GetByMovieIdAsync(int id);
 }
