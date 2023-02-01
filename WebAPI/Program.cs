@@ -1,12 +1,15 @@
 using Core.Entities;
 using Infrastructure.SeedData;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.FileProviders;
 using WebAPI.Extensions;
 using WebAPI.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddSignalR();
 
 builder.Services.AddControllers();
 builder.Services.AddApplicationServices(builder.Configuration);
@@ -35,14 +38,14 @@ using (var scope = app.Services.CreateScope())
     }
 }
 
+app.UseSwaggerDocumentation();
 
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+app.UseStaticFiles();
+app.UseStaticFiles(new StaticFileOptions
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    FileProvider = new PhysicalFileProvider(
+        Path.Combine(Directory.GetCurrentDirectory(), "Content")), RequestPath = "/Content"
+});
 
 app.UseHttpsRedirection();
 

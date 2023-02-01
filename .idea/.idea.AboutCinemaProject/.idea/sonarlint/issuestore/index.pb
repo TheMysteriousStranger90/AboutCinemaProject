@@ -55,7 +55,5 @@ s
 CInfrastructure/Migrations/AboutCinemaProjectContextModelSnapshot.cs,b\e\bec9cce3cd957aeced5f5e3cef4fcdc3a00f9ae1
 r
 BInfrastructure/Migrations/20230131144049_InitialCreate.Designer.cs,0\3\03d4c79b56fa5f7630ae1738144512ddba03ec09
-D
-WebAPI/WebAPI.csproj,6\5\6597775cd23d44e3ae763109f9db9b0cad35e8ac
 i
 9Infrastructure/Migrations/20230131144049_InitialCreate.cs,c\d\cd5df968f797d1d3d37b77be80f10cf9426901a3
