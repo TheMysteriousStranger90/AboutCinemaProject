@@ -1,9 +1,13 @@
 ﻿using Core.Interfaces;
+using Infrastructure;
 using Infrastructure.Context;
+using Infrastructure.Repositories;
 using Infrastructure.Services;
 using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using StackExchange.Redis;
+using WebAPI.Errors;
 
 namespace WebAPI.Extensions;
 
@@ -30,10 +34,32 @@ public static class ApplicationServicesExtensions
             options.DefaultRequestCulture = new RequestCulture("en-US");
         });
         
+        services.AddScoped<IFavouritesRepository, FavouritesRepository>();
+        services.AddScoped<IMovieRepository, MovieRepository>();
+        services.AddScoped<ICommentRepository, CommentRepository>();
+        services.AddScoped<IMovieRatingRepository, MovieRatingRepository>();
+        services.AddScoped<ITokenService, TokenService>();
+        services.AddScoped<IUnitOfWork, UnitOfWork>();
+        services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
         
         
-        
-        
+        services.Configure<ApiBehaviorOptions>(options =>
+        {
+            options.InvalidModelStateResponseFactory = actionContext => 
+            {
+                var errors = actionContext.ModelState
+                    .Where(e => e.Value.Errors.Count > 0)
+                    .SelectMany(x => x.Value.Errors)
+                    .Select(x => x.ErrorMessage).ToArray();
+                    
+                var errorResponse = new ApiValidationErrorResponse
+                {
+                    Errors = errors
+                };
+
+                return new BadRequestObjectResult(errorResponse);
+            };
+        });
         
         
         
