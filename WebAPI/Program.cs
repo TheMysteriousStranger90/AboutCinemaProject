@@ -2,6 +2,7 @@ using Core.Entities;
 using Infrastructure.SeedData;
 using Microsoft.AspNetCore.Identity;
 using WebAPI.Extensions;
+using WebAPI.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +17,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+app.UseMiddleware<ExceptionMiddleware>();
 
 
 using (var scope = app.Services.CreateScope())
