@@ -15,6 +15,8 @@ public class AutomapperProfile : Profile
             .ForMember(d => d.MovieRating, o => o.MapFrom(s => s.MovieRating.Rate))
             .ForMember(d => d.PictureUrl, o => o.MapFrom<MovieUrlResolver>());
         
+        CreateMap<FavouritesDto, Favourites>();
+        CreateMap<FavouriteFilmDto, FavouriteFilm>();
         CreateMap<CommentDto, Comment>().ReverseMap();
 
     }

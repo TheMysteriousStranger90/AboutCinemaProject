@@ -3,12 +3,8 @@ K
 Core/Entities/BaseEntity.cs,6\c\6c4b128c1557e2f239291e60e0400f85dda315f8
 F
 AboutCinemaProject.sln,5\1\514e8e3d2f5eca36a113018dad60dbd4a6fc9367
-N
-Core/Entities/FavouriteFilm.cs,0\a\0a2f667dad613840dc93369435d4111895c82153
 L
 Core/Entities/MovieRating.cs,5\7\57a4576219bc3c77dfb1cda3cb50db68a977f38d
-K
-Core/Entities/Favourites.cs,5\9\59e9d57be831b7893ae26315245d6e4a92292fb9
 X
 (Core/Interfaces/IResponseCacheService.cs,9\f\9fd90e0ff8c7cd1b9d11ad636efbcd42063c98ff
 P
@@ -43,26 +39,18 @@ W
 0Infrastructure/Repositories/GenericRepository.cs,7\8\78641506b7e73771831d1e694dcb40c531a25289
 U
 %Core/Interfaces/IGenericRepository.cs,0\a\0a100d39202301f562be29494bf40c30f121a0d3
-X
-(Core/Interfaces/IFavouritesRepository.cs,e\f\ef27f8c7276ee84ab2f644d008a2df171281b150
 S
 #Core/Interfaces/IMovieRepository.cs,5\3\5308f1ecda0e9f2971d25db401391497f426f5a9
 U
 %Core/Interfaces/ICommentRepository.cs,c\1\c1f2dce01290572742baa987c80e258973bde23c
 Y
 )Core/Interfaces/IMovieRatingRepository.cs,5\7\571d3d00ddd373061b7a801c87cebe7e2a2582c5
-`
-0Infrastructure/Repositories/CommentRepository.cs,f\7\f7ed6d1515c0a723c5b4efd52311ff955137250b
 ^
 .Infrastructure/Repositories/MovieRepository.cs,9\3\930e5ff5bda262ccd9f78fe821d392da2d4e40d9
-c
-3Infrastructure/Repositories/FavouritesRepository.cs,8\b\8bcd65f47ed1262546f5a99ba33e46ae8d9fb4be
 d
 4Infrastructure/Repositories/MovieRatingRepository.cs,2\8\282cf8ef03bfcd2893947025af53c9e1ca7272f3
 N
 Core/Interfaces/IUnitOfWork.cs,a\e\ae4114cb9cc8ef11b3c83df653738e0adc5ea3bb
-L
-Infrastructure/UnitOfWork.cs,f\b\fb8a39732736c72f1cd72b80a93c548d60dbe66d
 T
 $Infrastructure/Infrastructure.csproj,1\e\1eee757ae25be91d8006f58490360abe9e76bfb0
 [
