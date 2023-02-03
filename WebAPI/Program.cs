@@ -3,6 +3,7 @@ using Infrastructure.SeedData;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.FileProviders;
 using WebAPI.Extensions;
+using WebAPI.Hub;
 using WebAPI.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -52,5 +53,6 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapHub<CommentHub>("/hub");
 
 app.Run();

@@ -13,10 +13,6 @@ Q
 !Core/Interfaces/ISpecification.cs,7\0\7008ed235e0ceb1039d7c718e5747991907ab4d1
 X
 (Core/Specifications/BaseSpecification.cs,7\e\7e77b9ce0aabafb960799a6d8c118fcca945acdb
-H
-Core/Entities/Comment.cs,f\b\fbb635cb13985cedc447d24ffab565b9a2dd9499
-H
-Core/Entities/AppUser.cs,f\2\f214582608e53165fe3773615d4fc5735b1dbc75
 @
 Core/Core.csproj,1\4\1451827062291137729e2a6555c6ed55d31db0e7
 ]
@@ -25,8 +21,6 @@ c
 3Infrastructure/Configurations/MovieConfiguration.cs,1\2\12ed183f06d61781ff0c5d2750d82fb449d5a94d
 b
 2Infrastructure/Configurations/UserConfiguration.cs,6\8\68a5bb10b19cf36b5fb2a2c61e3edf3a536b37bc
-s
-CInfrastructure/Migrations/AboutCinemaProjectContextModelSnapshot.cs,b\e\bec9cce3cd957aeced5f5e3cef4fcdc3a00f9ae1
 r
 BInfrastructure/Migrations/20230131144049_InitialCreate.Designer.cs,0\3\03d4c79b56fa5f7630ae1738144512ddba03ec09
 i
@@ -59,8 +53,6 @@ M
 WebAPI/Errors/ApiException.cs,4\0\40e4cb34af45732ea3ae00f996fd701f6dea4ece
 L
 WebAPI/Errors/ApiResponse.cs,c\9\c9d8bb3e242bee319ad2bf47f594d3273d128bc7
-c
-3Infrastructure/Context/AboutCinemaProjectContext.cs,5\5\5512a9a5359b424bc8e42232028a943b0429d858
 L
 WebAPI/Helpers/Pagination.cs,6\f\6fd777424c54d9346d4328df60a880d3fd777e9a
 R
@@ -75,5 +67,3 @@ F
 WebAPI/DTO/LoginDto.cs,d\8\d8cd42722dc8476145ac8f04fba811de8bbe7435
 H
 WebAPI/Hub/CommentHub.cs,3\2\325f7d39f19b3558cbdf15d5a00dd221b108f6eb
-A
-WebAPI/Program.cs,f\a\faf253c58a39a374edeb1be4d2051b0cbd62f276
