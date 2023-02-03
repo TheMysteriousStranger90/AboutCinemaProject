@@ -25,11 +25,11 @@ public class AccountController : BaseApiController
 
         [Authorize]
         [HttpGet]
-        public async Task<ActionResult<UserDto>> GetCurrentUser()
+        public async Task<ActionResult<AppUserDto>> GetCurrentUser()
         {
             var user = await _unitOfWork.UserManager.FindByEmailFromClaimsPrincipal(User);
 
-            return new UserDto
+            return new AppUserDto
             {
                 Email = user.Email,
                 Token = _tokenService.CreateToken(user),
@@ -38,7 +38,7 @@ public class AccountController : BaseApiController
         }
 
         [HttpPost("login")]
-        public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
+        public async Task<ActionResult<AppUserDto>> Login(LoginDto loginDto)
         {
             var user = await _unitOfWork.UserManager.FindByEmailAsync(loginDto.Email);
 
@@ -48,7 +48,7 @@ public class AccountController : BaseApiController
 
             if (!result.Succeeded) return Unauthorized(new ApiResponse(401));
 
-            return new UserDto
+            return new AppUserDto
             {
                 Email = user.Email,
                 Token = _tokenService.CreateToken(user),
@@ -57,7 +57,7 @@ public class AccountController : BaseApiController
         }
 
         [HttpPost("register")]
-        public async Task<ActionResult<UserDto>> Register(RegisterDto registerDto)
+        public async Task<ActionResult<AppUserDto>> Register(RegisterDto registerDto)
         {
             if (CheckEmailExistsAsync(registerDto.Email).Result.Value)
             {
@@ -76,7 +76,7 @@ public class AccountController : BaseApiController
 
             if (!result.Succeeded) return BadRequest(new ApiResponse(400));
 
-            return new UserDto
+            return new AppUserDto
             {
                 DisplayName = user.DisplayName,
                 Token = _tokenService.CreateToken(user),

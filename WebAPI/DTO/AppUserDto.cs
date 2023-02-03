@@ -1,6 +1,6 @@
 ﻿namespace WebAPI.DTO;
 
-public class UserDto
+public class AppUserDto
 {
     public string DisplayName { get; set; }
     public string Email { get; set; }
