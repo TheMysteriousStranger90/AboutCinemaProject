@@ -8,6 +8,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { CoreModule } from './core/core.module';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     HttpClientModule,
     NgxSpinnerModule,
     CoreModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -48,8 +48,14 @@ app.UseStaticFiles(new StaticFileOptions
         Path.Combine(Directory.GetCurrentDirectory(), "Content")), RequestPath = "/Content"
 });
 
+app.UseCors(x => x
+    .AllowAnyOrigin()
+    .AllowAnyMethod()
+    .AllowAnyHeader());
+
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

@@ -10,7 +10,7 @@ import { RouterModule } from '@angular/router';
 
 import {PaginationModule} from 'ngx-bootstrap/pagination';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 
 @NgModule({
@@ -27,7 +27,8 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
     RouterModule,
     CdkStepperModule,
     PaginationModule.forRoot(),
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    CarouselModule.forRoot(),
   ],
   exports: [
     PagingHeaderComponent,
@@ -38,6 +39,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
     CdkStepperModule,
     BsDropdownModule,
     FormsModule,
+    CarouselModule
   ]
 })
 export class SharedModule { }

@@ -22,8 +22,8 @@
     </ng-container>
 
     <ng-container *ngIf="accountService.currentUser$ | async as user">
-      <div class="dropdown ms-3 me-5" style="cursor: pointer;" dropdown>
-        <a dropdownToggle class="dropdown-toggle">
+      <div class="dropdown ms-3 me-5" style="cursor: pointer; " dropdown>
+        <a dropdownToggle class="dropdown-toggle" style="color: #ffffff">
           <strong>Welcome {{user.displayName}}</strong>
         </a>
         <ul *dropdownMenu class="dropdown-menu dropdown-menu-right">

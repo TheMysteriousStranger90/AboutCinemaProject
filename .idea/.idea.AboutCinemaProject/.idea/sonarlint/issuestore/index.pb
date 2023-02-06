@@ -55,8 +55,6 @@ R
 "WebAPI/Helpers/MovieUrlResolver.cs,e\0\e0b7a412af38f0efb5c5c394c55efdbe1eac6485
 Q
 !WebAPI/Helpers/CachedAttribute.cs,f\c\fc36f34bef95245eebb283515426503cf7c8d520
-D
-WebAPI/WebAPI.csproj,6\5\6597775cd23d44e3ae763109f9db9b0cad35e8ac
 I
 WebAPI/DTO/RegisterDto.cs,e\6\e60453544e35968cd2eef38e94a2fafb6a454091
 F
@@ -69,14 +67,8 @@ X
 .WebAPI/Extensions/IdentityServiceExtensions.cs,3\0\3059f9fc5a4955c03b8510ef0b17e58b4dd4fa17
 ^
 .WebAPI/Extensions/ClaimsPrincipalExtensions.cs,a\a\aa092b1f1c75e709fcf63baab3b08b11e2164a66
-G
-WebAPI/appsettings.json,b\a\baff57cab0bdcf73d497c3bd5759654dcd69e980
-S
-#WebAPI/appsettings.Development.json,0\0\005281c9982602461dc74da3fb0ba7e2a583483f
 ]
 -WebAPI/Extensions/SwaggerServiceExtensions.cs,e\5\e569ce509d430a06c65dab0174c6e71b99616643
-b
-2WebAPI/Extensions/ApplicationServicesExtensions.cs,e\0\e05b9b1a475cad119ad1150c4e05b7c5288d4fb7
 K
 Core/Entities/MovieGenre.cs,e\1\e10457bee391671b89dbd9e7cae0a3669da64d30
 F
@@ -103,8 +95,6 @@ Z
 *WebAPI/Controllers/FavouritesController.cs,3\f\3fb983496b0435d85672f62abdd27a6492fde404
 W
 'WebAPI/Controllers/BaseApiController.cs,c\3\c36e1220ddd5f4d74c9c9f54b9db8a036ff2b6e3
-W
-'WebAPI/Controllers/AccountController.cs,4\c\4c8719bda5b63f1e8c912030c20e3c0c8c296312
 c
 3Infrastructure/Context/AboutCinemaProjectContext.cs,5\5\5512a9a5359b424bc8e42232028a943b0429d858
 s
@@ -119,8 +109,6 @@ r
 BInfrastructure/Migrations/20230203090640_InitialCreate.Designer.cs,3\5\35a3a1b7dbb92803064fe26b1773aef39e11bb4f
 `
 0WebAPI/Exceptions/AboutCinemaProjectException.cs,e\c\ec74a5af53095c2812c92bab93a1886a5ac0fe31
-A
-WebAPI/Program.cs,f\a\faf253c58a39a374edeb1be4d2051b0cbd62f276
 X
 (WebAPI/Controllers/CommentsController.cs,2\4\24b530c0494613ed328d7a9b61726668aa0f459d
 L
@@ -145,3 +133,7 @@ H
 Core/Entities/Comment.cs,f\b\fbb635cb13985cedc447d24ffab565b9a2dd9499
 F
 Core/Entities/Movie.cs,e\e\eef5a419d1a32ceded641a05c6f8ac00b2bf3905
+Z
+*Infrastructure/SeedData/SeedInitializer.cs,8\f\8fe3d92063b6ff47d294c0290ac7ad6dfd159032
+W
+'WebAPI/Controllers/AccountController.cs,4\c\4c8719bda5b63f1e8c912030c20e3c0c8c296312

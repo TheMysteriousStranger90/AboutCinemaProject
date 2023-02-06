@@ -17,7 +17,7 @@ export class LoginComponent {
 
   constructor(private accountService: AccountService, private router: Router,
               private activatedRoute: ActivatedRoute) {
-    this.returnUrl = this.activatedRoute.snapshot.queryParams['returnUrl'] || '/movies'
+    this.returnUrl = this.activatedRoute.snapshot.queryParams['returnUrl'] || '/home'
   }
 
   onSubmit() {
