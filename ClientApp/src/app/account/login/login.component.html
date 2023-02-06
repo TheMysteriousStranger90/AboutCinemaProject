@@ -1,0 +1,25 @@
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-25">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-4 col-md-8 col-lg-6 col-xl-5">
+        <div class="card text-white bg-primary mb-3" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" style="color: black">
+              <div class="mb-md-5 mt-md-4 pb-5">
+                <h2 class="fw-bold mb-2 text-uppercase " style="color: whitesmoke">Login</h2>
+                <p class="text-white-50 mb-5">Please enter your login and password!</p>
+                <app-text-input [formControl]="loginForm.controls['email']" [label]="'Email Address'"></app-text-input>
+                <app-text-input [formControl]="loginForm.controls['password']" [label]="'Password'"
+                                [type]="'password'"></app-text-input>
+                <div class="d-grid">
+                  <button [disabled]="loginForm.invalid" class="btn btn-secondary  mt-3" type="submit">Sign in
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
