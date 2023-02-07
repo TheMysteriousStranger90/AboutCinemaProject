@@ -133,7 +133,9 @@ H
 Core/Entities/Comment.cs,f\b\fbb635cb13985cedc447d24ffab565b9a2dd9499
 F
 Core/Entities/Movie.cs,e\e\eef5a419d1a32ceded641a05c6f8ac00b2bf3905
-Z
-*Infrastructure/SeedData/SeedInitializer.cs,8\f\8fe3d92063b6ff47d294c0290ac7ad6dfd159032
 W
 'WebAPI/Controllers/AccountController.cs,4\c\4c8719bda5b63f1e8c912030c20e3c0c8c296312
+b
+2WebAPI/Extensions/ApplicationServicesExtensions.cs,e\0\e05b9b1a475cad119ad1150c4e05b7c5288d4fb7
+D
+WebAPI/WebAPI.csproj,6\5\6597775cd23d44e3ae763109f9db9b0cad35e8ac
