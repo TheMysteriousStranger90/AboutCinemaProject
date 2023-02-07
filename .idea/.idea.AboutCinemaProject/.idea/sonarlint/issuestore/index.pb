@@ -11,8 +11,6 @@ P
  Core/Interfaces/ITokenService.cs,4\f\4fefab54e71683b343ad7add27b2303f427c871c
 Q
 !Core/Interfaces/ISpecification.cs,7\0\7008ed235e0ceb1039d7c718e5747991907ab4d1
-X
-(Core/Specifications/BaseSpecification.cs,7\e\7e77b9ce0aabafb960799a6d8c118fcca945acdb
 @
 Core/Core.csproj,1\4\1451827062291137729e2a6555c6ed55d31db0e7
 ]
@@ -49,8 +47,6 @@ M
 WebAPI/Errors/ApiException.cs,4\0\40e4cb34af45732ea3ae00f996fd701f6dea4ece
 L
 WebAPI/Errors/ApiResponse.cs,c\9\c9d8bb3e242bee319ad2bf47f594d3273d128bc7
-L
-WebAPI/Helpers/Pagination.cs,6\f\6fd777424c54d9346d4328df60a880d3fd777e9a
 R
 "WebAPI/Helpers/MovieUrlResolver.cs,e\0\e0b7a412af38f0efb5c5c394c55efdbe1eac6485
 Q
@@ -71,8 +67,6 @@ X
 -WebAPI/Extensions/SwaggerServiceExtensions.cs,e\5\e569ce509d430a06c65dab0174c6e71b99616643
 K
 Core/Entities/MovieGenre.cs,e\1\e10457bee391671b89dbd9e7cae0a3669da64d30
-F
-WebAPI/DTO/MovieDto.cs,3\a\3aa83880eaadec90ebe7424cbe7072ace6acedfd
 H
 WebAPI/DTO/AppUserDto.cs,9\0\902794bed92ea27378136c04072fbb321c1fa66e
 c
@@ -87,8 +81,6 @@ X
 (Core/Interfaces/IFavouritesRepository.cs,e\f\ef27f8c7276ee84ab2f644d008a2df171281b150
 N
 WebAPI/DTO/FavouriteFilmDto.cs,4\8\484facfb803c10476d88201655416ce3a26100b5
-S
-#WebAPI/Mapping/AutomapperProfile.cs,3\7\37836babf0adc17a8a4f422d62382ba40026187f
 K
 WebAPI/DTO/FavouritesDto.cs,b\f\bf8441726425a620f2fe871df0303fbaac0eb203
 Z
@@ -119,16 +111,8 @@ H
 Core/Entities/AppUser.cs,f\2\f214582608e53165fe3773615d4fc5735b1dbc75
 Z
 *WebAPI/Extensions/UserManagerExtensions.cs,f\6\f66829b6a043ff7c57a62a2a9a905195c795e877
-V
-&Core/Specifications/MovieSpecParams.cs,6\f\6f8f3f85f10282b05fb3bd502f00f3760f53c7ff
-m
-=Core/Specifications/MoviesWithFiltersForCountSpecification.cs,9\4\94cd3d049044945cae3868b37ac7cb34a6327859
-p
-@Core/Specifications/MoviesWithGenresAndCountriesSpecification.cs,0\1\01b97b7c43ba03b9442f37376cb1a01d7076f71a
 M
 Core/Entities/MovieCountry.cs,d\e\dead41e2fd56e7785003c2033da6f38d6027e71a
-V
-&WebAPI/Controllers/MoviesController.cs,d\8\d89da6891bc34f281a83024ef48a12aa811cdf16
 H
 Core/Entities/Comment.cs,f\b\fbb635cb13985cedc447d24ffab565b9a2dd9499
 F

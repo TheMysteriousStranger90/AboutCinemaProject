@@ -10,6 +10,9 @@ const routes: Routes = [
   {path: 'test-error', component: TestErrorComponent, data: {breadcrumb: 'Test Errors'}},
   {path: 'not-found', component: NotFoundComponent, data: {breadcrumb: 'Not Found'}},
   {path: 'server-error', component: ServerErrorComponent, data: {breadcrumb: 'Server Errors'}},
+  {path: 'movies', loadChildren: () => import('./movies/movies.module').then(m => m.MoviesModule),
+    data: {breadcrumb: 'Movies'}
+  },
 
 
   {path: 'account', loadChildren: () => import('./account/account.module').then(m => m.AccountModule), data: {breadcrumb: {skip: true}}},

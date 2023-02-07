@@ -10,8 +10,8 @@ public class MoviesWithGenresAndCountriesSpecification : BaseSpecification<Movie
         (!movieParams.GenreId.HasValue || x.MovieGenreId == movieParams.GenreId)
     )
     {
-        AddInclude(x => x.MovieCountryId);
-        AddInclude(x => x.MovieGenreId);
+        AddInclude(x => x.MovieCountry);
+        AddInclude(x => x.MovieGenre);
         AddOrderBy(x => x.Title);
         ApplyPaging(movieParams.PageSize * (movieParams.PageIndex - 1), movieParams.PageSize);
 
