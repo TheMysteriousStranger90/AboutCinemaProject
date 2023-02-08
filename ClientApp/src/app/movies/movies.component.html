@@ -45,9 +45,7 @@
 
       <div class="row row-cols-3 g-3 mb-4">
         <div class="col" *ngFor="let movie of movies">
-
-
-
+          <app-movie-item [movie]="movie"></app-movie-item>
         </div>
       </div>
 

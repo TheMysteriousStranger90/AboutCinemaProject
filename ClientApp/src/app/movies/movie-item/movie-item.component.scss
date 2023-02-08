@@ -1,0 +1,13 @@
+.card {
+  color: #ffffff;
+  background-color: #1a1a1a;
+}
+
+.image :hover {
+  opacity: 1;
+  & button {
+    transform: none;
+    opacity: 1;
+  }
+}
+

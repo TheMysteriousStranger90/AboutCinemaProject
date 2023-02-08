@@ -123,3 +123,15 @@ b
 2WebAPI/Extensions/ApplicationServicesExtensions.cs,e\0\e05b9b1a475cad119ad1150c4e05b7c5288d4fb7
 D
 WebAPI/WebAPI.csproj,6\5\6597775cd23d44e3ae763109f9db9b0cad35e8ac
+U
+%WebAPI/Properties/launchSettings.json,c\b\cbaf3685f4981d54ba8a8b042c469a113f59550e
+G
+WebAPI/appsettings.json,b\a\baff57cab0bdcf73d497c3bd5759654dcd69e980
+S
+#WebAPI/appsettings.Development.json,0\0\005281c9982602461dc74da3fb0ba7e2a583483f
+A
+WebAPI/Program.cs,f\a\faf253c58a39a374edeb1be4d2051b0cbd62f276
+Z
+*Infrastructure/SeedData/SeedInitializer.cs,8\f\8fe3d92063b6ff47d294c0290ac7ad6dfd159032
+Z
+*Infrastructure/SeedData/RoleInitializer.cs,d\9\d91ebf9319a64872f61e57a7a3dbecc39cde0d06
