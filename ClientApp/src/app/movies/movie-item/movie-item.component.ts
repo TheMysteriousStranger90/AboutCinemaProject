@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { FavouritesService } from 'src/app/favourites/favourites.service';
 import { Movie } from 'src/app/shared/models/movie';
 
 @Component({
@@ -10,10 +11,9 @@ export class MovieItemComponent {
 
   @Input() movie?: Movie;
 
-  constructor( ) { }
+  constructor(private favouritesService: FavouritesService) { }
 
-  addItemToFavourites() {
-    
+  addMovieToFavourites() {
+    this.movie && this.favouritesService.addMovieToFavourites(this.movie);
   }
-
 }

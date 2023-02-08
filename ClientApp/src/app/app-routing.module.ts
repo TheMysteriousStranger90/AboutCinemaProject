@@ -13,7 +13,9 @@ const routes: Routes = [
   {path: 'movies', loadChildren: () => import('./movies/movies.module').then(m => m.MoviesModule),
     data: {breadcrumb: 'Movies'}
   },
-
+  {path: 'favourites', loadChildren: () => import('./favourites/favourites.module').then(m => m.FavouritesModule),
+    data: {breadcrumb: 'Favourites'}
+  },
 
   {path: 'account', loadChildren: () => import('./account/account.module').then(m => m.AccountModule), data: {breadcrumb: {skip: true}}},
   {path: '**', redirectTo: '', pathMatch: 'full'},

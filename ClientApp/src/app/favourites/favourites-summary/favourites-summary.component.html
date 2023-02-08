@@ -1,0 +1,41 @@
+<div class="table-responsive " *ngIf="(favouritesService.favouritesSource$ | async) as favourites" >
+  <table class="table table-hover">
+    <thead class="text-uppercase"  [class.bg-light]="isFavourites">
+    <tr>
+      <th><div class="py-2">Movie Title</div></th>
+      <th *ngIf="isFavourites"><div class="py-2">Remove</div></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let movie of favourites.favouriteFilms">
+      <th>
+        <div class="p-2 d-inline-block " style="color: #ffffff">
+          <img src="{{movie.pictureUrl}}"
+               alt="{{movie.movieTitle}}"
+               class="img-fluid"
+               style="max-height: 50px;"
+          >
+          <div class="ms-3 d-inline-block align-middle" >
+            <h5 class="mb-0">
+              <a routerLink="/movies/{{movie.id}}" class="text">
+                {{movie.movieTitle}}
+              </a>
+            </h5>
+            <span class="text-muted fst-italic" >
+              Genre: {{movie.movieGenre}}
+            </span>
+          </div>
+        </div>
+      </th>
+      <td *ngIf="isFavourites" class="align-middle">
+        <a class="text-danger">
+          <i
+            (click)="removeFavouritesMovie(movie.id)"
+            class="bi bi-trash3"
+            style="font-size: 1.5em; cursor: pointer;"></i>
+        </a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

@@ -71,20 +71,14 @@ H
 WebAPI/DTO/AppUserDto.cs,9\0\902794bed92ea27378136c04072fbb321c1fa66e
 c
 3Infrastructure/Repositories/FavouritesRepository.cs,8\b\8bcd65f47ed1262546f5a99ba33e46ae8d9fb4be
-N
-Core/Entities/FavouriteFilm.cs,0\a\0a2f667dad613840dc93369435d4111895c82153
 `
 0Infrastructure/Repositories/CommentRepository.cs,f\7\f7ed6d1515c0a723c5b4efd52311ff955137250b
-K
-Core/Entities/Favourites.cs,5\9\59e9d57be831b7893ae26315245d6e4a92292fb9
 X
 (Core/Interfaces/IFavouritesRepository.cs,e\f\ef27f8c7276ee84ab2f644d008a2df171281b150
 N
 WebAPI/DTO/FavouriteFilmDto.cs,4\8\484facfb803c10476d88201655416ce3a26100b5
 K
 WebAPI/DTO/FavouritesDto.cs,b\f\bf8441726425a620f2fe871df0303fbaac0eb203
-Z
-*WebAPI/Controllers/FavouritesController.cs,3\f\3fb983496b0435d85672f62abdd27a6492fde404
 W
 'WebAPI/Controllers/BaseApiController.cs,c\3\c36e1220ddd5f4d74c9c9f54b9db8a036ff2b6e3
 c
@@ -133,5 +127,3 @@ A
 WebAPI/Program.cs,f\a\faf253c58a39a374edeb1be4d2051b0cbd62f276
 Z
 *Infrastructure/SeedData/SeedInitializer.cs,8\f\8fe3d92063b6ff47d294c0290ac7ad6dfd159032
-Z
-*Infrastructure/SeedData/RoleInitializer.cs,d\9\d91ebf9319a64872f61e57a7a3dbecc39cde0d06
