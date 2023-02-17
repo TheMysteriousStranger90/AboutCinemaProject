@@ -16,17 +16,17 @@ public class MovieRatingRepository : IMovieRatingRepository
         _context = context;
     }
 
-    public async Task Vote(MovieRating movieRating, string appUserID)
+    public async Task Vote(MovieRating movieRating, string appUserId)
     {
-        if (appUserID == null) { return; }
+        if (appUserId == null) { return; }
 
         var currentRating = await _context.MovieRating
             .FirstOrDefaultAsync(x => x.MovieId == movieRating.MovieId &&
-                                      x.AppUserId == appUserID);
+                                      x.AppUserId == appUserId);
 
         if (currentRating == null)
         {
-            movieRating.AppUserId = appUserID;
+            movieRating.AppUserId = appUserId;
             movieRating.RatingDate = DateTime.Today;
             _context.Add(movieRating);
             await _context.SaveChangesAsync();

@@ -46,12 +46,13 @@ public class CommentsController : BaseApiController
         var user = await _unitOfWork.UserManager.FindByEmailFromClaimsPrincipal(User);
         
         var comment = _mapper.Map<Comment>(commentDto);
-        comment.DisplayName = user.DisplayName;
-        
-        _unitOfWork.Repository<Comment>().Add(comment);
-        await _unitOfWork.SaveAsync();
 
-        return comment;
+        var result = await _unitOfWork.CommentRepository.AddCommentAsync(comment, user.Id);
+        await _unitOfWork.SaveAsync();
+        
+        if (result == null) return BadRequest(new ApiResponse(400, "Problem creating comment"));
+
+        return Ok(result);
     }
     
     [HttpDelete("{id}")]

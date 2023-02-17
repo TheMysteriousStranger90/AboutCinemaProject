@@ -18,4 +18,17 @@ public class CommentRepository : ICommentRepository
     {
         return await _context.Comments.Where(c => c.MovieId == id).AsNoTracking().ToListAsync();
     }
+
+    public async Task<Comment> AddCommentAsync(Comment comment, string appUserId)
+    {
+        var user = _context.AppUsers.FirstOrDefaultAsync(a => a.Id == appUserId).Result;
+
+        comment.AppUserId = appUserId;
+        comment.DisplayName = user.DisplayName;
+        comment.Date = DateTimeOffset.Now;
+        _context.Add(comment);
+        await _context.SaveChangesAsync();
+        
+        return comment;
+    }
 }
