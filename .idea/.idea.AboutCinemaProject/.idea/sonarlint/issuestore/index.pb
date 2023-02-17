@@ -3,8 +3,6 @@ K
 Core/Entities/BaseEntity.cs,6\c\6c4b128c1557e2f239291e60e0400f85dda315f8
 F
 AboutCinemaProject.sln,5\1\514e8e3d2f5eca36a113018dad60dbd4a6fc9367
-L
-Core/Entities/MovieRating.cs,5\7\57a4576219bc3c77dfb1cda3cb50db68a977f38d
 X
 (Core/Interfaces/IResponseCacheService.cs,9\f\9fd90e0ff8c7cd1b9d11ad636efbcd42063c98ff
 P

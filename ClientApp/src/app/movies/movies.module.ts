@@ -4,13 +4,15 @@ import { MoviesComponent } from './movies.component';
 import { SharedModule } from '../shared/shared.module';
 import { MoviesRoutingModule } from './movies-routing.module';
 import { MovieItemComponent } from './movie-item/movie-item.component';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
 
 
 @NgModule({
   declarations: [
     MoviesComponent,
-    MovieItemComponent
+    MovieItemComponent,
+    MovieDetailsComponent
   ],
   imports: [
     CommonModule,
