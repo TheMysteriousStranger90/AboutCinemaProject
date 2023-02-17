@@ -40,16 +40,13 @@ public class UnitOfWork : IUnitOfWork, IDisposable
 
     private IMovieRepository _movieRepository;
     public IMovieRepository MovieRepository => _movieRepository ??= new MovieRepository(_context);
+    
+    private IMovieRatingRepository _movieRatingRepository;
+    public IMovieRatingRepository MovieRatingRepository => _movieRatingRepository ??= new MovieRatingRepository(_context);
 
     private ICommentRepository _commentRepository;
     public ICommentRepository CommentRepository => _commentRepository ??= new CommentRepository(_context);
-
-    private IMovieRatingRepository _movieRatingRepository;
-
-    public IMovieRatingRepository MovieRatingRepository =>
-        _movieRatingRepository ??= new MovieRatingRepository(_context);
-
-
+    
     private readonly UserManager<AppUser> userManager;
 
     public UserManager<AppUser> UserManager

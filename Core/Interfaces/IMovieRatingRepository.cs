@@ -4,5 +4,5 @@ namespace Core.Interfaces;
 
 public interface IMovieRatingRepository
 {
-    Task Vote(MovieRating movieRating);
+    Task Vote(MovieRating movieRating, string appUserId);
 }

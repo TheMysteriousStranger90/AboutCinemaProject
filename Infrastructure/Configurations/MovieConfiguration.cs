@@ -20,8 +20,5 @@ public class MovieConfiguration : IEntityTypeConfiguration<Movie>
             .HasOne(m => m.MovieCountry)
             .WithMany()
             .HasForeignKey(p => p.MovieCountryId);
-        builder
-            .HasOne(m => m.MovieRating)
-            .WithOne(p => p.Movie).HasForeignKey<MovieRating>(m => m.MovieId);
     }
 }

@@ -12,12 +12,13 @@ public class AutomapperProfile : Profile
         CreateMap<Movie, MovieDto>()
             .ForMember(d => d.MovieCountry, o => o.MapFrom(s => s.MovieCountry.Name))
             .ForMember(d => d.MovieGenre, o => o.MapFrom(s => s.MovieGenre.Name))
-            .ForMember(d => d.MovieRating, o => o.MapFrom(s => s.MovieRating.Rate))
             .ForMember(d => d.PictureUrl, o => o.MapFrom<MovieUrlResolver>());
         
         CreateMap<FavouritesDto, Favourites>();
         CreateMap<FavouriteFilmDto, FavouriteFilm>();
+        
         CreateMap<CommentDto, Comment>().ReverseMap();
+        CreateMap<MovieRatingDto, MovieRating>().ReverseMap();
 
     }
 }

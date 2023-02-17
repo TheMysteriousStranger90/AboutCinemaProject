@@ -34,11 +34,14 @@ public static class ApplicationServicesExtensions
             options.DefaultRequestCulture = new RequestCulture("en-US");
         });
         
+        services.AddHttpContextAccessor();
+        
         services.AddScoped<IFavouritesRepository, FavouritesRepository>();
         services.AddScoped<IMovieRepository, MovieRepository>();
         services.AddScoped<ICommentRepository, CommentRepository>();
         services.AddScoped<IMovieRatingRepository, MovieRatingRepository>();
         services.AddScoped<ITokenService, TokenService>();
+        services.AddScoped<IAuthenticationStateService, AuthenticationStateService>();
         services.AddScoped<IUnitOfWork, UnitOfWork>();
         services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
         services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());

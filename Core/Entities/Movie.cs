@@ -12,8 +12,7 @@ public class Movie : BaseEntity
     public int MovieGenreId { get; set; }
     public MovieCountry MovieCountry { get; set; }
     public int MovieCountryId { get; set; }
-    public virtual MovieRating MovieRating { get; set; }
-    public virtual int MovieRatingId { get; set; }
+
     public ICollection<Comment> Comments { get; set; } = new List<Comment>();
-    public ICollection<AppUser> WatchLaterUsers { get; set; } = new List<AppUser>();
+
 }

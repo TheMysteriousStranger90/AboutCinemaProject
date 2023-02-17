@@ -8,31 +8,33 @@ namespace Infrastructure.Repositories;
 
 public class MovieRatingRepository : IMovieRatingRepository
 {
-    private readonly AboutCinemaProjectContext context;
+    private readonly AboutCinemaProjectContext _context;
 
     public MovieRatingRepository(
         AboutCinemaProjectContext context)
     {
-        this.context = context;
+        _context = context;
     }
 
-    public async Task Vote(MovieRating movieRating)
+    public async Task Vote(MovieRating movieRating, string appUserID)
     {
+        if (appUserID == null) { return; }
 
-
-        var currentRating = await context.MovieRating
-            .FirstOrDefaultAsync(x => x.MovieId == movieRating.MovieId);
+        var currentRating = await _context.MovieRating
+            .FirstOrDefaultAsync(x => x.MovieId == movieRating.MovieId &&
+                                      x.AppUserId == appUserID);
 
         if (currentRating == null)
         {
+            movieRating.AppUserId = appUserID;
             movieRating.RatingDate = DateTime.Today;
-            context.Add(movieRating);
-            await context.SaveChangesAsync();
+            _context.Add(movieRating);
+            await _context.SaveChangesAsync();
         }
         else
         {
             currentRating.Rate = movieRating.Rate;
-            await context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
         }
     }
 }
