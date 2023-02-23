@@ -8,4 +8,5 @@ export interface Movie {
   pictureUrl: string;
   movieGenre: string;
   movieCountry: string;
+  userVote: number;
 }

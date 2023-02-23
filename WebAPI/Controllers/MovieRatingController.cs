@@ -9,6 +9,7 @@ using WebAPI.Extensions;
 
 namespace WebAPI.Controllers;
 
+[Authorize]
 public class MovieRatingController : BaseApiController
 {
     private readonly IUnitOfWork _unitOfWork;
@@ -21,8 +22,7 @@ public class MovieRatingController : BaseApiController
     }
 
     [HttpPost]
-    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-    public async Task<ActionResult> Rate([FromBody] MovieRatingDto movieRatingDto)
+    public async Task<ActionResult> Post([FromBody] MovieRatingDto movieRatingDto)
     {
         var user = await _unitOfWork.UserManager.FindByEmailFromClaimsPrincipal(User);
         

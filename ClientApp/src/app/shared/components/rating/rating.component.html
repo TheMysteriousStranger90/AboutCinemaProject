@@ -1,0 +1,13 @@
+<mat-icon
+  *ngFor="let i of maxRatingArr; let index = index"
+  (mouseenter)="handleMouseEnter(index)"
+  (mouseleave)="handleMouseLeave()"
+  (click)="rate(index)"
+  [ngClass]="{checked: selectedRate > index}"
+>star</mat-icon>
+
+<div class="card mt-2 ">
+  <pre class="card-block card-header" style="margin:10px 0; padding-top: 5px">
+    RATE: <b>{{selectedRate}}</b>
+  </pre>
+</div>

@@ -12,6 +12,7 @@ import { HomeModule } from './home/home.module';
 import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
 import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
     HttpClientModule,
     NgxSpinnerModule,
     CoreModule,
-    HomeModule
+    HomeModule,
+    SharedModule
   ],
   providers: [
   {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},

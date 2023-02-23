@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(AboutCinemaProjectContext))]
-    [Migration("20230203090640_InitialCreate")]
+    [Migration("20230223054829_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -24,21 +24,6 @@ namespace Infrastructure.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("AppUserMovie", b =>
-                {
-                    b.Property<int>("WatchLaterMoviesId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("WatchLaterUsersId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("WatchLaterMoviesId", "WatchLaterUsersId");
-
-                    b.HasIndex("WatchLaterUsersId");
-
-                    b.ToTable("WatchLater", (string)null);
-                });
 
             modelBuilder.Entity("Core.Entities.AppUser", b =>
                 {
@@ -161,9 +146,6 @@ namespace Infrastructure.Migrations
                     b.Property<int>("MovieGenreId")
                         .HasColumnType("int");
 
-                    b.Property<int>("MovieRatingId")
-                        .HasColumnType("int");
-
                     b.Property<string>("PictureUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -195,7 +177,6 @@ namespace Infrastructure.Migrations
                             Director = "Federico Fellini",
                             MovieCountryId = 2,
                             MovieGenreId = 4,
-                            MovieRatingId = 0,
                             PictureUrl = "images/movies/movie1.jpg",
                             RuntimeHours = 2.54,
                             Title = "La dolce vita",
@@ -208,7 +189,6 @@ namespace Infrastructure.Migrations
                             Director = "Jean-Pierre Melville",
                             MovieCountryId = 1,
                             MovieGenreId = 1,
-                            MovieRatingId = 0,
                             PictureUrl = "images/movies/movie2.jpg",
                             RuntimeHours = 1.45,
                             Title = "Le Samouraï",
@@ -221,7 +201,6 @@ namespace Infrastructure.Migrations
                             Director = "Ridley Scott",
                             MovieCountryId = 3,
                             MovieGenreId = 2,
-                            MovieRatingId = 0,
                             PictureUrl = "images/movies/movie3.jpg",
                             RuntimeHours = 1.5700000000000001,
                             Title = "Blade Runner",
@@ -234,7 +213,6 @@ namespace Infrastructure.Migrations
                             Director = "Elem Klimov",
                             MovieCountryId = 4,
                             MovieGenreId = 1,
-                            MovieRatingId = 0,
                             PictureUrl = "images/movies/movie4.jpg",
                             RuntimeHours = 2.2200000000000002,
                             Title = "Come and See",
@@ -327,7 +305,7 @@ namespace Infrastructure.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("AppUserId")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("MovieId")
                         .HasColumnType("int");
@@ -335,13 +313,11 @@ namespace Infrastructure.Migrations
                     b.Property<int>("Rate")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("RatingDate")
-                        .HasColumnType("datetime2");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("MovieId")
-                        .IsUnique();
+                    b.HasIndex("AppUserId");
+
+                    b.HasIndex("MovieId");
 
                     b.ToTable("MovieRating");
                 });
@@ -479,21 +455,6 @@ namespace Infrastructure.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("AppUserMovie", b =>
-                {
-                    b.HasOne("Core.Entities.Movie", null)
-                        .WithMany()
-                        .HasForeignKey("WatchLaterMoviesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Core.Entities.AppUser", null)
-                        .WithMany()
-                        .HasForeignKey("WatchLaterUsersId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("Core.Entities.Comment", b =>
                 {
                     b.HasOne("Core.Entities.AppUser", "AppUser")
@@ -532,11 +493,17 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("Core.Entities.MovieRating", b =>
                 {
+                    b.HasOne("Core.Entities.AppUser", "AppUser")
+                        .WithMany()
+                        .HasForeignKey("AppUserId");
+
                     b.HasOne("Core.Entities.Movie", "Movie")
-                        .WithOne("MovieRating")
-                        .HasForeignKey("Core.Entities.MovieRating", "MovieId")
+                        .WithMany()
+                        .HasForeignKey("MovieId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("AppUser");
 
                     b.Navigation("Movie");
                 });
@@ -600,8 +567,6 @@ namespace Infrastructure.Migrations
             modelBuilder.Entity("Core.Entities.Movie", b =>
                 {
                     b.Navigation("Comments");
-
-                    b.Navigation("MovieRating");
                 });
 #pragma warning restore 612, 618
         }

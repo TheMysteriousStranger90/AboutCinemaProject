@@ -3,15 +3,19 @@
 
 
 
-    <div class="col-4">
+    <div class="col-4 mt-2">
       <img src="{{movie.pictureUrl}}" alt="{{movie.title}}" class="w-50" style="border: 4px solid black;">
+
+      <div class="col-xl-6 mt-2">
+        <h5>Your Vote:</h5>
+        <app-rating (onRating)="onRating($event)" [selectedRate]="movie.userVote" ></app-rating>
+      </div>
+
     </div>
 
-
-
-    <div class="col-xxl-8 mt-5" style="color: #ffffff;">
+    <div class="col-xxl-8  mt-5" style="color: #ffffff;">
       <h2>{{movie.title}}</h2>
-      <div class="card shadow-sm" style="border: 3px solid #a9a9a9;">
+      <div class="card shadow-sm d-flex justify-content-center" style="border: 2px solid #a9a9a9;">
         <div class="row mt-lg-5">
           <h4>Description</h4>
           <p>{{movie.description}}</p>
@@ -35,6 +39,36 @@
     </div>
 
     <div class="row mt-2">
+    </div>
+
+
+    <div class="row mt-2">
+      <form (ngSubmit)="addComment()" [formGroup]="commentForm">
+        <mat-card>
+          <mat-label>ADD YOUR COMMENT ABOUT MOVIE:</mat-label>
+          <mat-form-field>
+            <textarea matInput rows="6" name="second_question" required ngModel #your_comment="ngModel" maxlength="800"></textarea>
+            <mat-error *ngIf="your_comment.invalid">You can't create an empty comment.</mat-error>
+          </mat-form-field>
+          <button mat-raised-button color="primary" type="submit">Save</button>
+        </mat-card>
+      </form>
+    </div>
+
+    <div class="row mt-2">
+      <mat-accordion class="accordion" multi="true" *ngIf="comments.length > 0">
+        <mat-expansion-panel *ngFor="let comment of comments">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-panel-description>
+            <p>{{ comment.displayName }}</p>
+            <p>{{ comment.text }}</p>
+          </mat-panel-description>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <h3 class="info-text mat-body-3" *ngIf="comments.length <= 0">NO COMMENTS...</h3>
     </div>
 
   </div>

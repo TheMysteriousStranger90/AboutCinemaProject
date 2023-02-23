@@ -26,15 +26,16 @@ public class MovieRatingRepository : IMovieRatingRepository
 
         if (currentRating == null)
         {
-            movieRating.AppUserId = appUserId;
-            movieRating.RatingDate = DateTime.Today;
-            _context.Add(movieRating);
-            await _context.SaveChangesAsync();
+            var rating = new MovieRating();
+            rating.AppUserId = appUserId;
+            rating.MovieId = movieRating.MovieId;
+            rating.Rate = movieRating.Rate;
+            _context.Add(rating);
         }
         else
         {
             currentRating.Rate = movieRating.Rate;
-            await _context.SaveChangesAsync();
         }
+        await _context.SaveChangesAsync();
     }
 }

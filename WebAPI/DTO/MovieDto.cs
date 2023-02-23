@@ -11,7 +11,9 @@ public class MovieDto
     public string PictureUrl { get; set; }
     public string MovieGenre { get; set; }
     public string MovieCountry { get; set; }
-    public int? MovieRating { get; set; }
+
+    public double AverageVote  { get; set; }
+    public int UserVote { get; set; }
     public ICollection<CommentDto>? Comments { get; set; } = new List<CommentDto>();
-    public ICollection<AppUserDto>? WatchLaterUsers { get; set; } = new List<AppUserDto>();
+    
 }

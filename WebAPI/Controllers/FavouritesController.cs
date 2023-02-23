@@ -1,11 +1,13 @@
 ﻿using AutoMapper;
 using Core.Entities;
 using Core.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebAPI.DTO;
 
 namespace WebAPI.Controllers;
 
+[Authorize]
 public class FavouritesController : BaseApiController
 {
     private readonly IFavouritesRepository _favouritesRepository;

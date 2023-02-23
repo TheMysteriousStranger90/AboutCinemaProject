@@ -36,7 +36,7 @@
               "node_modules/bootswatch/dist/lux/bootstrap.min.css",
               "node_modules/ngx-spinner/animations/square-loader.css",
               "node_modules/ngx-toastr/toastr.css",
-
+              
               "src/styles.scss"
             ],
             "scripts": [

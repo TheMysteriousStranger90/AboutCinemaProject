@@ -43,6 +43,8 @@ using (var scope = app.Services.CreateScope())
 
 app.UseSwaggerDocumentation();
 
+app.UseRouting();
+
 app.UseStaticFiles();
 app.UseStaticFiles(new StaticFileOptions
 {
@@ -62,5 +64,7 @@ app.UseAuthorization();
 
 app.MapControllers();
 app.MapHub<CommentHub>("/hub");
+
+app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
 
 app.Run();
