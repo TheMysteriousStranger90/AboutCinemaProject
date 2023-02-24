@@ -30,7 +30,7 @@ public class MovieRatingRepository : IMovieRatingRepository
             rating.AppUserId = appUserId;
             rating.MovieId = movieRating.MovieId;
             rating.Rate = movieRating.Rate;
-            _context.Add(rating);
+            _context.MovieRating.Add(rating);
         }
         else
         {

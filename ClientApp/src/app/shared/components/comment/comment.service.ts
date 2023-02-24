@@ -14,11 +14,11 @@ export class CommentService {
   constructor(private http: HttpClient) { }
 
   getAllComments() : Observable<Comment[]>{
-    return this.http.get<Comment[]>(`${this.baseUrl}/comments`);
+    return this.http.get<Comment[]>(this.baseUrl + 'comments');
   }
 
   getCommentsByMovieId(id: number): Observable<Comment[]>{
-    return this.http.get<Comment[]>(`${this.baseUrl}/comments/movies/` + id);
+    return this.http.get<Comment[]>(this.baseUrl + 'comments/movies/' + id);
   }
 
   addComment(comment: Comment){
@@ -28,10 +28,11 @@ export class CommentService {
       })
     };
 
-    return this.http.post<Comment>(`${this.baseUrl}/comments`,comment, headers);
+    console.log(comment)
+    return this.http.post<Comment>(this.baseUrl + 'comments', comment, headers);
   }
 
   deleteComment(id: number){
-    return this.http.delete(`${this.baseUrl}/comments/` + id);
+    return this.http.delete(this.baseUrl + 'comments/' + id);
   }
 }

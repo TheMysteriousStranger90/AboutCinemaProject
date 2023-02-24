@@ -16,8 +16,8 @@ public class AutomapperProfile : Profile
         
         CreateMap<FavouritesDto, Favourites>();
         CreateMap<FavouriteFilmDto, FavouriteFilm>();
-        
-        CreateMap<CommentDto, Comment>().ReverseMap();
+
+        CreateMap<CommentDto, Comment>();
         CreateMap<MovieRatingDto, MovieRating>();
 
     }

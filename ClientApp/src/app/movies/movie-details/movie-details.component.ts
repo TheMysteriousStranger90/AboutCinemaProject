@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup } from '@angular/forms';
+import {FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AccountService } from 'src/app/account/account.service';
@@ -20,20 +20,28 @@ import {Comment} from '../../shared/models/comment'
 export class MovieDetailsComponent implements OnInit{
 
   movie?: Movie;
-  commentForm!: FormGroup;
-  myMovieId : number | any
+  myMovieId : number | any;
+
+  commentForm: FormGroup;
   comments: Comment[] = [];
+
+  user : any;
+  displayName : string = '';
 
   constructor(private moviesService: MoviesService, private activatedRoute: ActivatedRoute, private bcService: BreadcrumbService,
               private fb: FormBuilder,
               private accountService: AccountService, private ratingService: RatingService, private toastr: ToastrService, private commentService: CommentService,) {
     this.bcService.set('@movieDetails', ' ')
+
+    this.commentForm = this.fb.group({
+      text: ['']
+    });
   }
 
   ngOnInit(): void {
-    this.loadMovie()
-
-    this.createForm();
+    this.getUserInfo();
+    this.loadMovie();
+    this.LoadAllComments();
   }
 
   loadMovie() {
@@ -49,13 +57,6 @@ export class MovieDetailsComponent implements OnInit{
     })
   }
 
-  createForm(){
-    this.commentForm = this.fb.group({
-      movieId: [this.movie?.id],
-      text: [null]
-    });
-  }
-
   onRating(rate: number){
     const movieRating: MovieRating = {
       rate: rate,
@@ -68,20 +69,39 @@ export class MovieDetailsComponent implements OnInit{
   }
 
   addComment(){
-    if (!this.commentForm!.valid){
+    if (!this.commentForm.valid){
       return;
     }
 
-    var comment = this.commentForm!.value;
-    comment.movieId = this.movie!.id;
+    var comment =  this.commentForm.value;
+    comment.movieId = this.myMovieId;
 
-    this.commentForm!.reset();
+    this.commentForm.reset();
 
     this.commentService.addComment(comment).subscribe(c =>
     {
       this.comments.unshift(c);
-      this.ngOnInit();
     }, err => console.log(err));
   }
 
+  getUserInfo() {
+    this.user = this.accountService.currentUser$;
+    this.displayName = this.user.displayName;
+  }
+
+  LoadAllComments() {
+    this.commentService.getCommentsByMovieId(this.myMovieId)
+      .subscribe(comments => this.comments = comments);
+  }
+
+  deleteComment(id: number){
+    this.commentService.deleteComment(id).subscribe( c => {
+      this.commentService.getCommentsByMovieId(this.myMovieId).subscribe( c => {
+        this.comments = c;
+        this.comments.reverse();
+      })
+    }, err => {
+      this.toastr.error('Something went wrong','Error!');
+    })
+  }
 }
